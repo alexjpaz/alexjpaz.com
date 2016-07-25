@@ -4,6 +4,10 @@ CMD=$1
 shift
 ARGS=$@
 
+build() {
+  echo "it built"
+}
+
 deploy() {
   docker pull xueshanf/awscli
   docker run --rm \
