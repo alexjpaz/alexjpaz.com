@@ -19,6 +19,7 @@ deploy() {
       --recursive \
       --content-type "text/plain" \
       --cache-control "max-age=3600" \
+      --acl public-read \
       /app/public \
       s3://alexjpaz.com
 }
