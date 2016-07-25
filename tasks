@@ -13,9 +13,10 @@ deploy() {
    -v $PWD:/app xueshanf/awscli\
     aws s3 cp \
       --recursive \
+      --content-type "text/plain" \
       --cache-control "max-age=3600" \
       /app/public \
-      s3://soundboard.alexjpaz.com
+      s3://alexjpaz.com
 }
 
 $CMD $ARGS
