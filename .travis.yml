@@ -10,3 +10,4 @@ deploy:
     script: make deploy
     on:
       repo: alexjpaz/alexjpaz.com
+      branch: master
