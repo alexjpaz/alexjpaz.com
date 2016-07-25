@@ -1,0 +1,12 @@
+sudo: required
+services:
+  - docker
+language: bash
+install:
+  - make
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: make deploy
+    on:
+      repo: alexjpaz/alexjpaz.com
