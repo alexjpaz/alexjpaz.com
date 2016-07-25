@@ -17,8 +17,8 @@ deploy() {
    -v $PWD:/app xueshanf/awscli\
     aws s3 cp \
       --recursive \
-      --content-type "text/plain" \
-      --cache-control "max-age=3600" \
+      --content-type "text/html" \
+      --cache-control "max-age=60" \
       --acl public-read \
       /app/public \
       s3://alexjpaz.com
