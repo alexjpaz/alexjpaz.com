@@ -2,6 +2,9 @@
 
 service: alexjpazdotcom
 
+package:
+  individually: true
+
 provider:
   name: aws
   runtime: nodejs8.10
