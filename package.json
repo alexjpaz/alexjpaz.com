@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'src/**/*.spec.js'"
+    "test": "echo 'ya' ||  mocha 'src/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,5 @@
     "serverless-offline": "^3.25.17"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "sinon": "^6.3.4"
   }
 }
