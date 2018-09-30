@@ -23,6 +23,7 @@ jobs:
       - run: npm i serverless@1.30.3
       - run: 
           name: Package and Deploy
+          command: |
             if [[ "CIRCLE_BRANCH" == "master" ]]; then
               SLS_DEBUG=* node_modules/.bin/serverless deploy -v
             else
