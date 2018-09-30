@@ -8,6 +8,9 @@ provider:
   stage: dev
   region: us-east-1
 
+package:
+  excludeDevDependencies: false
+
 functions:
   app:
     handler: index.handler
