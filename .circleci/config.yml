@@ -20,7 +20,7 @@ jobs:
             #- node_modules
           #key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
-      - run: npm i serverless
+      - run: npm i serverless@1.30.3
       - run: "SLS_DEBUG=* node_modules/.bin/serverless deploy -v"
 
 workflows:
