@@ -24,9 +24,11 @@ jobs:
       - run: 
           name: Package and Deploy
           command: |
-            if [[ "CIRCLE_BRANCH" == "master" ]]; then
+            if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+              echo "Deploying"
               SLS_DEBUG=* node_modules/.bin/serverless deploy -v
             else
+              echo "Packaging"
               SLS_DEBUG=* node_modules/.bin/serverless package -v
             fi
 
