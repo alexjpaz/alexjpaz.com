@@ -2,8 +2,8 @@
 
 service: alexjpazdotcom
 
-#plugins:
-  #- serverless-offline
+plugins:
+  - serverless-offline
 
 provider:
   name: aws
