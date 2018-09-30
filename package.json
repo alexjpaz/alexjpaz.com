@@ -19,12 +19,12 @@
   "homepage": "https://github.com/alexjpaz/alexjpaz.com#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "serverless-http": "^1.6.0"
+    "serverless-http": "^1.6.0",
+    "serverless-offline": "^3.25.17"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
-    "serverless-offline": "^3.25.17",
     "sinon": "^6.3.4"
   }
 }
