@@ -26,7 +26,10 @@ jobs:
           command: |
             if [[ "$CIRCLE_BRANCH" == "master" ]]; then
               echo "Deploying"
-              SLS_DEBUG=* node_modules/.bin/serverless deploy -v
+              node_modules/.bin/serverless deploy --stage dev -v | tee deploy.out
+              BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }') npm run test:integration
+              node_modules/.bin/serverless deploy --stage production -v | tee deploy.out
+              BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }') npm run test:integration
             else
               echo "Packaging"
               SLS_DEBUG=* node_modules/.bin/serverless package -v
