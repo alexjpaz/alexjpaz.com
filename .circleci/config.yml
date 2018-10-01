@@ -32,6 +32,9 @@ jobs:
         - run:
             name: Serverless Package
             command: "SLS_DEBUG=* node_modules/.bin/serverless package -v"
+        - run: 
+            name: Deploy to dev
+            command: .circleci/deploy.sh dev
 
   deploy:
       docker:
@@ -51,8 +54,8 @@ jobs:
         - run: npm test
         - run: npm i serverless@1.30.3
         - run: 
-            name: Deploy to dev
-            command: .circleci/deploy.sh dev
+            name: Deploy to staging
+            command: .circleci/deploy.sh staging
         - run:
             name: Deploy to prod
             command: .circleci/deploy.sh production

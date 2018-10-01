@@ -10,6 +10,13 @@ app.get('/wishlist', (req, res) => {
   res.redirect('https://www.amazon.com/gp/registry/wishlist/39HDNC1ODLVA4');
 });
 
+const plugins = [
+  './doggo'
+].forEach((path) => {
+  const plugin = require(path);
+  plugin.register(app);
+});
+
 app.get('*', proxy('https://alexjpaz.github.io/'));
 
 module.exports = app;
