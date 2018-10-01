@@ -12,5 +12,5 @@ sls_rollback() {
 }
 
 sls deploy list --stage ${STAGE} -v | tee deploy-list.out
-PREVIOUS_VERSION=$(cat deploy-list.out grep 'Timestamp' | awk '{ print $3 }' | sort -nr)
+PREVIOUS_VERSION=$(cat deploy-list.out | grep 'Timestamp' | awk '{ print $3 }' | sort -nr)
 sls deploy --stage ${STAGE} -v | tee deploy.out || sls rollback --timestamp=${PREVIOUS_VERSION}
