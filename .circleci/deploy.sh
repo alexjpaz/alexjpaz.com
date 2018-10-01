@@ -9,6 +9,7 @@ sls() {
 sls_rollback() {
     local timestamp=$1
     sls rollback --timestamp=${timestamp}
+    exit 1
 }
 
 sls deploy list --stage ${STAGE} -v | tee deploy-list.out
