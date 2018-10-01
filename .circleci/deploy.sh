@@ -3,7 +3,7 @@
 STAGE=$1
 
 sls() {
-    node_modules/.bin/serverless
+    node_modules/.bin/serverless $@
 }
 
 sls_rollback() {
