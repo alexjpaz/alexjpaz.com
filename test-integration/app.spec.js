@@ -8,3 +8,10 @@ it('should invoke', async () => {
   await request.get('/hello')
     .expect(200, /Hello/);
 })
+
+describe('/wishlist', () => {
+  it('should invoke', async () => {
+    await request.get('/wishlist')
+      .expect(302);
+  })
+});
