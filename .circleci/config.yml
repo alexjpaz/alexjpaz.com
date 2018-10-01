@@ -20,22 +20,58 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm test
-      - run: npm i serverless@1.30.3
-      - run: 
-          name: Package and Deploy
-          command: |
-            if [[ "$CIRCLE_BRANCH" == "master" ]]; then
-              echo "Deploying"
-              .circleci/deploy.sh dev
-              .circleci/deploy.sh production
-            else
-              echo "Packaging"
-              SLS_DEBUG=* node_modules/.bin/serverless package -v
-            fi
+
+  package:
+      docker:
+        - image: circleci/node:8.10
+      working_directory: ~/repo
+      steps:
+        - checkout
+        - run: npm i
+        - run: npm i serverless@1.30.3
+        - run:
+            name: Serverless Package
+            command: "SLS_DEBUG=* node_modules/.bin/serverless package -v"
+
+  deploy:
+      docker:
+        - image: circleci/node:8.10
+      working_directory: ~/repo
+      steps:
+        - checkout
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+        - run: npm i
+        - save_cache:
+            paths:
+              - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
+        - run: npm test
+        - run: npm i serverless@1.30.3
+        - run: 
+            name: Deploy to dev
+            command: .circleci/deploy.sh dev
+        - run:
+            name: Deploy to prod
+            command: .circleci/deploy.sh production
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
-          context: "aws.amazon.com/alexjpaz/circleci"
+      - build
+      - package:
+         requires:
+            - build
+         filters:
+           branches:
+             ignore: master
+      - deploy:
+         requires:
+            - build
+         context: "aws.amazon.com/alexjpaz/circleci"
+         filters:
+           branches:
+            only: master
