@@ -60,7 +60,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
+      - build
       - package:
          requires:
             - build
@@ -68,7 +68,9 @@ workflows:
            branches:
              ignore: master
       - deploy:
-          context: "aws.amazon.com/alexjpaz/circleci"
-          filters:
-            branches:
-              only: master
+         requires:
+            - build
+         context: "aws.amazon.com/alexjpaz/circleci"
+         filters:
+           branches:
+            only: master
