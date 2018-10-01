@@ -8,8 +8,3 @@ it('should invoke', async () => {
   await request.get('/hello')
     .expect(200, /Hello/);
 })
-
-it('should invoke', async () => {
-  await request.get('/hello2')
-    .expect(200, /Hello/);
-})
