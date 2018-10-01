@@ -7,8 +7,8 @@ sls() {
 }
 
 sls_rollback() {
-    echo "=== Rolling back ${STAGE} to ${timestamp}  ==="
     local timestamp=$1
+    echo "=== Rolling back ${STAGE} to ${timestamp}  ==="
     sls rollback --timestamp=${timestamp}
     exit 1
 }
