@@ -81,9 +81,9 @@ workflows:
            branches:
              ignore: master
       - deploy_to_test:
-         context: "aws.amazon.com/alexjpaz/circleci"
          requires:
             - package
+         context: "aws.amazon.com/alexjpaz/circleci"
          filters:
            branches:
              ignore: master
