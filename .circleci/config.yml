@@ -26,17 +26,12 @@ jobs:
         - image: circleci/node:8.10
       working_directory: ~/repo
       steps:
-        - checkout
-        - run: npm i
         - run: npm i serverless@1.30.3
         - run:
             name: Serverless Package
             command: "SLS_DEBUG=* node_modules/.bin/serverless package -v"
-        - run: 
-            name: Deploy to dev
-            command: .circleci/deploy.sh dev
 
-  deploy_to_test:
+  deploy_to_dev:
       docker:
         - image: circleci/node:8.10
       working_directory: ~/repo
@@ -45,23 +40,11 @@ jobs:
             name: Deploy to dev
             command: .circleci/deploy.sh dev
 
-  deploy:
+  deploy_to_prod:
       docker:
         - image: circleci/node:8.10
       working_directory: ~/repo
       steps:
-        - checkout
-        - restore_cache:
-            keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-        - run: npm i
-        - save_cache:
-            paths:
-              - node_modules
-            key: v1-dependencies-{{ checksum "package.json" }}
-        - run: npm test
-        - run: npm i serverless@1.30.3
         - run: 
             name: Deploy to staging
             command: .circleci/deploy.sh staging
@@ -77,17 +60,14 @@ workflows:
       - package:
          requires:
             - build
-         filters:
-           branches:
-             ignore: master
-      - deploy_to_test:
+      - deploy_to_dev:
          requires:
             - package
          context: "aws.amazon.com/alexjpaz/circleci"
          filters:
            branches:
              ignore: master
-      - deploy:
+      - deploy_to_prod:
          requires:
             - build
          context: "aws.amazon.com/alexjpaz/circleci"
