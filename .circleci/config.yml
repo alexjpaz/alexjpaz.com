@@ -36,6 +36,15 @@ jobs:
             name: Deploy to dev
             command: .circleci/deploy.sh dev
 
+  deploy_to_test:
+      docker:
+        - image: circleci/node:8.10
+      working_directory: ~/repo
+      steps:
+        - run: 
+            name: Deploy to dev
+            command: .circleci/deploy.sh dev
+
   deploy:
       docker:
         - image: circleci/node:8.10
@@ -68,6 +77,12 @@ workflows:
       - package:
          requires:
             - build
+         filters:
+           branches:
+             ignore: master
+      - deploy_to_test:
+         requires:
+            - package
          filters:
            branches:
              ignore: master
