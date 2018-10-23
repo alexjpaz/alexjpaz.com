@@ -6,14 +6,9 @@ const app = require('../src');
 
 const request = supertest(process.env.BASE_URL || app);
 
-it('should invoke', async () => {
-  await request.get('/hello')
-    .expect(200, /Hello/);
-})
-
-describe('/wishlist', () => {
-  it('should invoke', async () => {
-    await request.get('/wishlist')
+describe('/doggo', () => {
+  it('should redirect to a doggo', async () => {
+    await request.get('/doggo')
       .expect(302);
   })
 });
