@@ -6,11 +6,9 @@ app.get('/hello', function (req, res) {
   res.send('Hello World!')
 })
 
-app.get('/wishlist', (req, res) => {
-  res.redirect('https://www.amazon.com/gp/registry/wishlist/39HDNC1ODLVA4');
-});
-
 require('./doggo')(app);
+
+require('./redirect')(app);
 
 // ENSURE THIS IS LAST
 app.get('*', proxy('https://alexjpaz.github.io/'));
