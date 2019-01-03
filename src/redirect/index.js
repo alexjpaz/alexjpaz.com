@@ -7,4 +7,7 @@ module.exports = (app) => {
     res.redirect('http://prathu.herokuapp.com');
   });
 
+  app.get('/be-my-friend', (req, res) => {
+    res.redirect('https://www.youtube.com/watch?v=1Uy8D_KsdyA');
+  });
 };
