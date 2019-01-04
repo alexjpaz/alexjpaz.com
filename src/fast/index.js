@@ -5,7 +5,7 @@ module.exports = (app, options) => {
     const url = 'https://fa2yu62thb.execute-api.us-east-1.amazonaws.com/production/sanic';
     const rsp = await request.get(url);
 
-    const imageUrl = new URL(rsp.body.text);
+    const imageUrl = rsp.body.text;
 
     if(req.query.printUrl) {
       return res.send(imageUrl);
