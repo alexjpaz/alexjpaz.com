@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha 'src/**/*.spec.js'",
-    "test:integration": "mocha 'test-integration/**/*.spec.js'"
+    "test:integration": "mocha -t 10000 'test-integration/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
