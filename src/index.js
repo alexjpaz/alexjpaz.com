@@ -8,6 +8,7 @@ app.get('/hello', function (req, res) {
 
 require('./doggo')(app);
 require('./fast')(app);
+require('./and-his-name-is')(app);
 
 require('./redirect')(app);
 

@@ -14,7 +14,7 @@ module.exports = (app, options) => {
 
     const result = html.toString()
       .replace(/{{ name }}/g, name)
-  
+
     res.send(result);
   });
 };
