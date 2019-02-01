@@ -1,0 +1,158 @@
+<html>
+  <style>
+    body,html {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flex-center {
+      max-width: 50%;
+      flex: 1;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .hero-text {
+      font-size: 4em;
+    }
+
+    .play-overlay__text {
+      text-align: center;
+      max-width: 50%;
+      flex: 1;
+    }
+
+    .play-overlay {
+      width: 100%;
+      height: 100%;
+
+      font-size: 4em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: black;
+      color: white;
+    }
+  </style>
+  <body>
+  <div class='play-overlay flex'>
+    <div class='play-overlay__text flex-center'>CLICK TO PLAY</div>
+  </div>
+  <div id='app'>
+    <div class='flex'>
+      <div class='play-overlay__text flex-center text-center hero-text'></div>
+    <div>
+  </div>
+  <script>
+    var NAME = "{{ name }}";
+    var soundboardMediaUrl = "https://soundboard.alexjpaz.com/";
+
+    var startAudio = new Audio(soundboardMediaUrl+"chop/john_cena/start");
+    var endAudio = new Audio(soundboardMediaUrl+"chop/john_cena/end");
+
+    var soundboard = {};
+
+    soundboard.speak = function(text, callback) {
+      var msg = new SpeechSynthesisUtterance(text);
+      var voices = speechSynthesis.getVoices();
+      msg.voice = voices[0];
+      msg.voiceURI = 'native';
+      msg.volume = 1;
+      msg.rate = 0.75;
+      msg.pitch = 1;
+      msg.text = text;
+      msg.lang = 'en-US';
+      msg.onend = callback;
+
+      speechSynthesis.speak(msg);
+    }
+
+    soundboard.displayAndHisNameIs = function(name) {
+      var text = "";
+
+      var heroText = document.querySelector('.hero-text');
+
+      var update = function() {
+        heroText.innerHTML = text;
+      };
+
+      var frames = [
+        [0 , "and"],
+        [150, "his"],
+        [150, "name"],
+        [150, "is"],
+        [200, "<br/>" + name]
+      ];
+
+      var tt = 0;
+
+      frames.forEach(function(frame) {
+        tt += frame[0];
+        setTimeout(function() {
+          text += " " + frame[1];
+          update();
+        }, tt);
+      });
+    };
+
+    soundboard.displayName = function(name) {
+      var heroText = document.querySelector('.hero-text');
+      heroText.innerHTML += name;
+    };
+
+    soundboard.andHisNameIs = function(name) {
+
+      startAudio.load();
+      endAudio.load();
+
+      try {
+        startAudio
+          .play()
+          .then(function() {
+            clickOverlay.remove();
+            soundboard.displayAndHisNameIs(name);
+            startAudio.addEventListener("ended", function() {
+              soundboard.speak(name, function() {
+                endAudio.play();
+              });
+            }, false);
+          })
+          .catch(function(e) {
+            console.error(e);
+            throw e;
+          });
+      } catch(e) {
+        console.error(e);
+        throw e;
+      }
+    }
+
+    var clickOverlay = document.querySelector('.play-overlay');
+
+    clickOverlay.addEventListener('click', function() {
+      soundboard.andHisNameIs(NAME);
+    }, false);
+
+    var start = function() {
+      try {
+        soundboard.andHisNameIs(NAME);
+      } catch(e) {
+        console.log(e);
+      }
+    };
+
+    start();
+  </script>
+  </body>
+</html>
