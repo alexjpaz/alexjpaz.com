@@ -44,6 +44,34 @@
       background: black;
       color: white;
     }
+
+    .boom-animation {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10% {
+        background-color: black;
+        color: white;
+        transform: translate3d(-10px, -8px, 0);
+      }
+
+      20%, 80% {
+        background-color: white;
+        transform: translate3d(12px, 8px, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-16px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(16px, -8px, 0);
+      }
+    }
   </style>
   <body>
   <div class='play-overlay flex'>
@@ -91,8 +119,8 @@
         [0 , "and"],
         [150, "his"],
         [150, "name"],
-        [150, "is"],
-        [200, "<br/>" + name]
+        [200, "is"],
+        [500, "<br/>" + name]
       ];
 
       var tt = 0;
@@ -111,6 +139,12 @@
       heroText.innerHTML += name;
     };
 
+    soundboard.displayNameShake = function(name) {
+      var heroText = document.querySelector('body');
+      heroText.className = heroText.className.replace("boom-animation","");
+      heroText.className += " boom-animation";
+    };
+
     soundboard.andHisNameIs = function(name) {
 
       startAudio.load();
@@ -124,6 +158,7 @@
             soundboard.displayAndHisNameIs(name);
             startAudio.addEventListener("ended", function() {
               soundboard.speak(name, function() {
+                soundboard.displayNameShake();
                 endAudio.play();
               });
             }, false);
