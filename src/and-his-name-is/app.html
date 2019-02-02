@@ -184,6 +184,8 @@
             startAudio.addEventListener("ended", function() {
               soundboard.displayClear();
               utterence = soundboard.speak(name, function() {
+                soundboard.displayClear();
+                soundboard.displayAppendText(name);
                 soundboard.displayNameShake();
                 endAudio.play();
               });
