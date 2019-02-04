@@ -203,6 +203,9 @@
               utterence.onboundary = function(event) {
                 if(event.name === "word") {
                   var part = nameParts.shift();
+                  if(!part) {
+                    return
+                  }
                   part += " ";
                   soundboard.displayAppendText(part);
                 }
