@@ -18,7 +18,7 @@ echo "=== Deploying to ${STAGE} stage ==="
 sls deploy list --stage ${STAGE} -v &> deploy-list.out
 PREVIOUS_VERSION=$(cat deploy-list.out | grep 'Timestamp' | awk '{ print $3 }' | sort -nr)
 sls deploy --stage ${STAGE} -v | tee deploy.out
-BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }') npm run test:integration
+BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }') npm run test:integration --retries 5
 
 if [[ "$?" -ne 0 ]]; then
     sls_rollback $PREVIOUS_VERSION
