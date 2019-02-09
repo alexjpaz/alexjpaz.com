@@ -28,6 +28,7 @@ jobs:
       steps:
         - checkout
         - run: npm i
+        - run: npm run build
         - run: npm i serverless@1.30.3
         - run:
             name: Run local integration tests
