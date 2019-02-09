@@ -1,5 +1,5 @@
 
-const publicPath = "/public";
+const publicPath = "/dist";
 
 module.exports = {
   mode: "development",

@@ -16,7 +16,7 @@ const bootstrap = (app, options) => {
   app.use('/dist', express.static('dist'))
 
   // ENSURE THIS IS LAST
-  app.get('*', proxy('https://alexjpaz.github.io/'));
+  app.get([/^((?!dist).)*$/gm], proxy('https://alexjpaz.github.io/'));
 };
 
 module.exports = bootstrap;
