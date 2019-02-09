@@ -53,6 +53,7 @@ jobs:
               - node_modules
             key: v1-dependencies-{{ checksum "package.json" }}
         - run: npm test
+        - run: npm run build
         - run: npm i serverless@1.30.3
         - run:
             name: Deploy to dev
