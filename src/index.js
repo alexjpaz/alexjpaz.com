@@ -1,18 +1,22 @@
-const express = require('express')
-const app = express()
-var proxy = require('express-http-proxy');
+const express = require('express');
 
-app.get('/hello', function (req, res) {
-  res.send('Hello World!')
-})
+const bootstrap = (app, options) => {
+  var proxy = require('express-http-proxy');
 
-require('./doggo')(app);
-require('./fast')(app);
-require('./and-his-name-is')(app);
+  app.get('/hello', function (req, res) {
+    res.send('Hello World!')
+  })
 
-require('./redirect')(app);
+  require('./doggo')(app);
+  require('./fast')(app);
+  require('./and-his-name-is')(app);
 
-// ENSURE THIS IS LAST
-app.get('*', proxy('https://alexjpaz.github.io/'));
+  require('./redirect')(app);
 
-module.exports = app;
+  app.use('/dist', express.static('dist'))
+
+  // ENSURE THIS IS LAST
+  app.get('*', proxy('https://alexjpaz.github.io/'));
+};
+
+module.exports = bootstrap;

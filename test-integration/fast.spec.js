@@ -1,6 +1,5 @@
-const supertest = require('supertest');
-const app = require('../src');
-const request = supertest(process.env.BASE_URL || app);
+const { setup } = require('./common');
+const { request } = setup();
 
 describe('/fast', () => {
   it('should display html sanic', async () => {

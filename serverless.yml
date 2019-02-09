@@ -11,6 +11,9 @@ provider:
 package:
   excludeDevDependencies: true
 
+plugins:
+  - serverless-offline
+
 functions:
   app:
     handler: index.handler

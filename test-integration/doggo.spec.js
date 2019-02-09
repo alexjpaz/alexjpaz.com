@@ -1,10 +1,7 @@
 var fail = require("chai").assert.fail;
 
-const supertest = require('supertest');
-
-const app = require('../src');
-
-const request = supertest(process.env.BASE_URL || app);
+const { setup } = require('./common');
+const { request } = setup();
 
 describe('/doggo', () => {
   it('should redirect to a doggo', async () => {

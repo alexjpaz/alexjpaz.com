@@ -1,3 +1,8 @@
+const express = require('express')
+const server = express();
+
 const app = require('./src');
 
-app.listen(3000)
+app(server);
+
+server.listen(3000)

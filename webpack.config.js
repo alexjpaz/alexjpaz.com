@@ -12,7 +12,7 @@ module.exports = {
   devServer: {
     publicPath,
     after: (app) => {
-      require('./src/and-his-name-is')(app);
+      require('./src')(app);
     }
   }
 };
