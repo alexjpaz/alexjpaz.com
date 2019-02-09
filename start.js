@@ -1,8 +1,8 @@
 const express = require('express')
-const server = express();
+const app = express();
 
-const app = require('./src');
+const plugin = require('./src');
 
-app(server);
+plugin(app);
 
-server.listen(3000)
+app.listen(3000)
