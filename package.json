@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node start.js",
+    "start": "webpack-dev-server",
     "build": "npm run build:webpack",
     "build:webpack": "webpack -p",
     "test": "mocha 'src/**/*.spec.js'",
