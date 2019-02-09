@@ -53,7 +53,7 @@ jobs:
             key: v1-dependencies-{{ checksum "package.json" }}
         - run: npm test
         - run: npm i serverless@1.30.3
-        - run: 
+        - run:
             name: Deploy to dev
             command: .circleci/deploy.sh dev
         - run:
