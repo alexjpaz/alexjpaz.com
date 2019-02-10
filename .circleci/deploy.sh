@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STAGE=$1
+STAGE=$(echo $1 | sed 's@[_/]@@g')
 
 sls() {
     node_modules/.bin/serverless $@
@@ -24,7 +24,7 @@ if [[ "$?" -ne 0 ]]; then
     sls_rollback $PREVIOUS_VERSION
 fi
 
-if [[ "branch_" = ${STAGE}* ]]; then
+if [[ "${STAGE}" =~ ^branch ]]; then
     echo "=== Sleeping for 5 minutes before tearing down the stack"
     sleep 300
     sls remove
