@@ -11,7 +11,7 @@ describe('expected endpoints', () => {
     ['/and-his-name-is/foobar', 200, /foobar/],
     ['/dist/and-his-name-is.js', 200, /and-his-name-is/],
     ['/dist/test.js', 200, /TEST/],
-    ['/404', 404, /GitHub/],
+    ['/fakefakefake', 307, /alexjpaz.github.io/],
     ['/dist/404', 404, /Cannot GET/]
   ].forEach((endpoint) => {
     const url = endpoint[0];

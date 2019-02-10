@@ -15,10 +15,16 @@ const bootstrap = (app, options) => {
 
   require('./redirect')(app);
 
+  // catch all
+
+  app.use('/', express.static('dist'))
   app.use('/dist', express.static('dist'))
+  app.use('/', express.static('public'));
 
   // ENSURE THIS IS LAST
-  app.get([/^((?!dist).)*$/gm], proxy('https://alexjpaz.github.io/'));
+  app.get([/^((?!dist).)*$/gm], (req, res, next) => {
+    res.redirect(307, `https://alexjpaz.github.io${req.originalUrl}`);
+  });
 };
 
 module.exports = bootstrap;
