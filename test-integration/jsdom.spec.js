@@ -41,7 +41,7 @@ describe('jsdom', () => {
     expect(dom.serialize()).to.contain("Alexander Paz");
   });
 
-  xit('test external resources', async () => {
+  it('test external resources', async () => {
     const dom = await JSDOM.fromURL(`${baseURL}/test`, {
       runScripts: "dangerously",
       resources: "usable"

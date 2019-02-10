@@ -5,7 +5,7 @@ module.exports = (app) => {
       <script>
         window.TEST_INLINE_SCRIPT = true;
       </script>
-      <script src='../dist/test.js'></script>
+      <script src='./dist/test.js'></script>
     </html>
     `);
   });
