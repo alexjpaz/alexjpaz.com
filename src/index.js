@@ -3,6 +3,8 @@ const express = require('express');
 const bootstrap = (app, options) => {
   var proxy = require('express-http-proxy');
 
+  require('./test')(app);
+
   app.get('/hello', function (req, res) {
     res.send('Hello World!')
   })
