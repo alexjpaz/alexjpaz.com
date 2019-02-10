@@ -23,3 +23,9 @@ BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }') npm run
 if [[ "$?" -ne 0 ]]; then
     sls_rollback $PREVIOUS_VERSION
 fi
+
+if [[ "branch_" = ${STAGE}* ]]; then
+    echo "=== Sleeping for 5 minutes before tearing down the stack"
+    sleep 300
+    sls remove
+fi

@@ -36,6 +36,27 @@ jobs:
         - run:
             name: Serverless Package
             command: "SLS_DEBUG=* node_modules/.bin/serverless package -v"
+  deploy_branch:
+      docker:
+        - image: circleci/node:8.10
+      working_directory: ~/repo
+      steps:
+        - checkout
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+        - run: npm i
+        - save_cache:
+            paths:
+              - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
+        - run: npm test
+        - run: npm run build
+        - run: npm i serverless@1.30.3
+        - run:
+            name: Deploy to temporary stage
+            command: .circleci/deploy.sh branch_${CIRCLE_BRANCH}
 
   deploy:
       docker:
@@ -80,3 +101,10 @@ workflows:
          filters:
            branches:
             only: master
+      - deploy_branch:
+         requires:
+            - build
+         context: "aws.amazon.com/alexjpaz/circleci"
+         filters:
+           branches:
+            ignore: master
