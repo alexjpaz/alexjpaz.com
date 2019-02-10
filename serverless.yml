@@ -20,3 +20,8 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+
+  status_check:
+    handler: status_check.handler
+    events:
+      - schedule: rate(15 minutes)
