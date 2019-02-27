@@ -8,6 +8,7 @@ module.exports = {
   },
   entry: {
     "and-his-name-is": "./src/and-his-name-is/app.js",
+    "everyday": "./src/everyday/app.js",
     "test": "./src/test/app.js"
   },
   devServer: {

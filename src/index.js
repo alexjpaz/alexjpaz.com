@@ -12,6 +12,7 @@ const bootstrap = (app, options) => {
   require('./doggo')(app);
   require('./fast')(app);
   require('./and-his-name-is')(app);
+  require('./everyday')(app);
 
   require('./redirect')(app);
 

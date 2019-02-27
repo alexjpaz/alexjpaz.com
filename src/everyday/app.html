@@ -1,0 +1,121 @@
+<html>
+  <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25975548-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-25975548-1');
+  </script>
+
+  <style>
+    body,html {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flex-center {
+      max-width: 50%;
+      flex: 1;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .hero-text {
+      font-size: 12vw;
+      text-align: center;
+    }
+
+    .play-overlay__text {
+      text-align: center;
+      max-width: 50%;
+    }
+
+    .play-overlay__text small {
+      color: gray;
+    }
+
+    .play-overlay {
+      width: 100%;
+      height: 100%;
+
+      font-size: 4em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: black;
+      color: white;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select:   none;
+       -khtml-user-select:   none;
+         -moz-user-select:   none;
+          -ms-user-select:   none;
+              user-select:   none;
+    }
+
+    .boom-animation {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10% {
+        background-color: black;
+        color: white;
+        transform: translate3d(-10px, -8px, 0);
+      }
+
+      20%, 80% {
+        background-color: white;
+        transform: translate3d(12px, 8px, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-16px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(16px, -8px, 0);
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div class='play-overlay flex'>
+      <div class='play-overlay__text flex-center'>
+        <span>▷</span>
+        <br />
+        <small>click to play</small>
+      </div>
+    </div>
+    <div id='app'>
+      <div class='flex'>
+        <div class='play-overlay__text flex-center text-center hero-text'></div>
+      </div>
+    </div>
+
+    <script>
+      window.ENVIRONMENT = {
+        soundboardMediaUrl: "https://soundboard.alexjpaz.com/",
+        activity: "{{ activity }}"
+      };
+    </script>
+    <script src='/dist/everyday.js'></script>
+  </body>
+</html>
