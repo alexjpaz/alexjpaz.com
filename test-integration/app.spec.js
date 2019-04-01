@@ -6,6 +6,7 @@ const { request } = setup();
 describe('expected endpoints', () => {
   const endpoints = [
     ['/', 200, /Alexander Paz/],
+    ['/teamwork', 302],
     ['/hello', 200, /Hello/],
     ['/wishlist', 302],
     ['/and-his-name-is/foobar', 200, /foobar/],

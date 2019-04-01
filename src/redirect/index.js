@@ -14,4 +14,8 @@ module.exports = (app) => {
   app.get('/nani', (req, res) => {
     res.redirect('https://www.youtube.com/embed/vxKBHX9Datw?start=6&autoplay=1')
   });
+
+  app.get('/teamwork', (req, res) => {
+    res.redirect('https://cdn.rawgit.com/alexjpaz/tilde-soundboard/files/tenascious_d_nsfw_thats_fucking_teamwork.ogg');
+  });
 };
