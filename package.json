@@ -24,8 +24,10 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-http-proxy": "^1.4.0",
+    "js-yaml": "^3.13.1",
     "serverless-http": "^1.6.0",
-    "serverless-offline": "^3.25.17"
+    "serverless-offline": "^3.25.17",
+    "sinon": "^7.3.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
