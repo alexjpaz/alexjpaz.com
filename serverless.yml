@@ -10,6 +10,8 @@ provider:
 
 package:
   excludeDevDependencies: true
+  exclude:
+    - "packages/**"
 
 plugins:
   - serverless-offline
