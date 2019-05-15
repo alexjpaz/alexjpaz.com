@@ -6,6 +6,7 @@ const { request } = setup();
 describe('expected endpoints', () => {
   const endpoints = [
     ['/', 200, /Alexander Paz/],
+    ['/', 200, /content="Gatsby/],
     ['/teamwork', 302],
     ['/hello', 200, /Hello/],
     ['/wishlist', 302],
@@ -13,7 +14,7 @@ describe('expected endpoints', () => {
     ['/dist/and-his-name-is.js', 200, /and-his-name-is/],
     ['/dist/test.js', 200, /TEST/],
     ['/fakefakefake', 307, /alexjpaz.github.io/],
-    ['/dist/404', 404, /Cannot GET/]
+    ['/dist/'+Math.random().toString()+'/does-not-exist', 404, /Cannot GET/]
   ].forEach((endpoint) => {
     const url = endpoint[0];
     const statusCode = endpoint[1];

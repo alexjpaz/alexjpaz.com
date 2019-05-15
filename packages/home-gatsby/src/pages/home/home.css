@@ -1,0 +1,44 @@
+/*img {*/
+  /*border-radius: 50%;*/
+  /*box-shadow: 0px 10px 10px #aaa;*/
+  /*width: 100%;*/
+/*}*/
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  font-family: sans-serif;
+  color: #777;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.links a {
+  display: block;
+  margin-bottom: 4px;
+  color: #444;
+  padding: 10px;
+  text-decoration: none;
+  background: #ddd;
+}
+
+.link-unstyled {
+  text-decoration: none;
+  color: #777;
+}
+
+.link-unstyled:hover {
+  text-decoration: none;
+  color: #aaa;
+}
