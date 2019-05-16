@@ -93,6 +93,7 @@ const HomeFooter = () => (
         <span>Built by </span><a href="https://twitter.com/alexjpaz">@alexjpaz</a>.
       </p>
       <p>© 2019</p>
+      <p><a href='https://www.gatsbyjs.org/'>Built with Gatsby</a></p>
     </div>
   </footer>
 );
