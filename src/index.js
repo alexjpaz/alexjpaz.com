@@ -18,9 +18,18 @@ const bootstrap = (app, options) => {
 
   // catch all
 
-  app.use('/', express.static('dist'))
-  app.use('/dist', express.static('dist'))
-  app.use('/', express.static('public'));
+  app.use('/', express.static('dist', { 
+    immutable: true,
+    maxAge: 99
+  }))
+  app.use('/dist', express.static('dist', { 
+    immutable: true,
+    maxAge: 99
+  }))
+  app.use('/', express.static('public', { 
+    immutable: true,
+    maxAge: 99
+  }));
 
   // ENSURE THIS IS LAST
   app.get([/^((?!dist).)*$/gm], (req, res, next) => {
