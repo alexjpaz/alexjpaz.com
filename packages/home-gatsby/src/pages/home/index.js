@@ -92,6 +92,7 @@ const HomeFooter = () => (
       <p>
         <span>Built by </span><a href="https://twitter.com/alexjpaz">@alexjpaz</a>.
       </p>
+      <p>© 2019</p>
     </div>
   </footer>
 );
