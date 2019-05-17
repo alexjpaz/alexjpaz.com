@@ -3,7 +3,7 @@ const { expect } = require("chai");
 const { setup } = require('./common');
 const { request } = setup();
 
-describe.only('cache', () => {
+describe('cache', () => {
   describe('index.html', () => {
     let rsp;
 
