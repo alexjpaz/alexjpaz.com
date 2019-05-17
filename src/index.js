@@ -23,8 +23,8 @@ const bootstrap = (app, options) => {
     lastModified: false
   };
 
-  app.use('/', express.static('dist', cacheConfig}))
-  app.use('/dist', express.static('dist', cacheConfig))
+  app.use('/', express.static('dist', cacheConfig));
+  app.use('/dist', express.static('dist', cacheConfig));
   app.use('/', express.static('public', cacheConfig));
 
   // ENSURE THIS IS LAST
