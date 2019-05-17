@@ -18,8 +18,7 @@ const bootstrap = (app, options) => {
 
   // catch all
   const cacheConfig = {
-    //etag: false,
-    maxAge: 7,
+    maxAge: "59s",
     lastModified: false
   };
 
