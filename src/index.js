@@ -26,11 +26,6 @@ const bootstrap = (app, options) => {
   app.use('/', express.static('dist', cacheConfig));
   app.use('/dist', express.static('dist', cacheConfig));
   app.use('/', express.static('public', cacheConfig));
-
-  // ENSURE THIS IS LAST
-  app.get([/^((?!dist).)*$/gm], (req, res, next) => {
-    res.redirect(307, `https://alexjpaz.github.io${req.originalUrl}`);
-  });
 };
 
 module.exports = bootstrap;
