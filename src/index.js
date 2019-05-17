@@ -17,19 +17,15 @@ const bootstrap = (app, options) => {
   require('./redirect')(app);
 
   // catch all
+  const cacheConfig = {
+    etag: false,
+    maxAge: 7,
+    lastModified: false
+  };
 
-  app.use('/', express.static('dist', { 
-    immutable: true,
-    maxAge: 99
-  }))
-  app.use('/dist', express.static('dist', { 
-    immutable: true,
-    maxAge: 99
-  }))
-  app.use('/', express.static('public', { 
-    immutable: true,
-    maxAge: 99
-  }));
+  app.use('/', express.static('dist', cacheConfig}))
+  app.use('/dist', express.static('dist', cacheConfig))
+  app.use('/', express.static('public', cacheConfig));
 
   // ENSURE THIS IS LAST
   app.get([/^((?!dist).)*$/gm], (req, res, next) => {
