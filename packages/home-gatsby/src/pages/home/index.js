@@ -14,7 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGithub,
   faTwitter,
-  faLinkedin
+  faLinkedin,
+  faKeybase
 } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = React.Fragment;
@@ -44,6 +45,7 @@ const HeroSocialLinks = () => {
     { href: "https://github.com/alexjpaz", label: "github", icon: faGithub } ,
     { href: "https://twitter.com/alexjpaz", label: "twitter", icon: faTwitter },
     { href: "https://www.linkedin.com/in/ajpaz/", label: "linkedin", icon: faLinkedin },
+    { href: "https://keybase.io/alexjpaz", label: "keybase", icon: faKeybase },
   ];
 
   return (
