@@ -95,8 +95,8 @@ const HomeFooter = () => (
         <span>Built by </span><a href="https://twitter.com/alexjpaz">@alexjpaz</a>.
       </p>
       <p><a href='https://www.gatsbyjs.org/'>Built with Gatsby</a></p>
+      <p><span role="img" aria-label="ending note">🤔</span></p>
       <p>© 2019</p>
-      <p>🏠</p>
     </div>
   </footer>
 );
