@@ -75,4 +75,19 @@ describe('jsdom', () => {
     expect(dom.window.TEST_EXTERNAL_SCRIPT, "should load an external script (webpack should be run)").to.be.ok;
 
   });
+
+  it('should display and error for html5', async () => {
+    const dom = await JSDOM.fromURL(`${baseURL}/test/html5`, {
+      runScripts: "dangerously",
+      resources: "usable"
+    });
+
+    expect(dom.serialize()).to.contain("TEST_HTML5_TITLE");
+
+    await new Promise((res) => {
+      dom.window.addEventListener("load", res);
+    });
+
+    expect(dom.serialize()).to.contain("There was an error loading the app");
+  });
 });

@@ -20,4 +20,14 @@ module.exports = (app) => {
 
     res.send(html);
   });
+
+  app.get('/test/html5bad', (req, res) => {
+    const html = generateHtml5Page({
+      title: "TEST_HTML5_TITLE",
+      scriptUrl: "/error/404/does_not_exist"
+    });
+
+    res.send(html);
+  });
+
 };
