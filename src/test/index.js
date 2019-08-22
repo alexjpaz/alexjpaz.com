@@ -30,4 +30,14 @@ module.exports = (app) => {
     res.send(html);
   });
 
+  app.get('/test/html5/external', (req, res) => {
+    const html = generateHtml5Page({
+      title: "TEST_HTML5_TITLE",
+      scriptUrl: "https://alexjpaz.github.io/static/test/test.js"
+    });
+
+    res.send(html);
+
+  });
+
 };
