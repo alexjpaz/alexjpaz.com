@@ -1,8 +1,14 @@
+const build = {
+  sha: process.env.CIRCLE_SHA1 || "UNKNOWN",
+  number: process.env.CIRCLE_BUILD_NUM || "UNKNOWN"
+};
+
 module.exports = {
   siteMetadata: {
     title: `Alexander Paz`,
     description: `Alexander Paz personal site`,
     author: `@alexjpaz`,
+    build,
   },
   plugins: [
     {
