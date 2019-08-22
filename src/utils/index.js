@@ -7,6 +7,9 @@ exports.generateHtml5Page = (props) => {
         <title>${props.title}</title>
       </head>
       <body>
+        <noscript>
+          You need to enable JavaScript to run this app.
+        </noscript>
         <script defer src='${props.scriptUrl}'/>
       </body>
     </html>
