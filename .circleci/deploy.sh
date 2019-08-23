@@ -1,7 +1,7 @@
 #!/bin/bash
 
 STAGE=$1
-STAGE=${STAGE//\//_}
+STAGE=${STAGE//\//-}
 
 echo "STAGE=${STAGE}"
 
