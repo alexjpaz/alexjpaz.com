@@ -16,6 +16,7 @@ provider:
   apiGateway:
     binaryMediaTypes:
       - 'image/*'
+      - '*/*'
 
 package:
   excludeDevDependencies: true
