@@ -1,6 +1,7 @@
 #!/bin/bash
 
 STAGE=$1
+export expiresAt=$2
 
 sls() {
     node_modules/.bin/serverless $@
