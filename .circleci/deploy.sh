@@ -26,6 +26,8 @@ if [[ -z "$BASE_URL" ]]; then
     sls_rollback $PREVIOUS_VERSION
 fi
 
+echo "BASE_URL=$BASE_URL"
+
 npm run test:integration -- --retries 5 --forbid-only
 
 if [[ "$?" -ne 0 ]]; then
