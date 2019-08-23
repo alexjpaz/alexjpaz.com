@@ -62,6 +62,30 @@ jobs:
             name: Deploy to prod
             command: .circleci/deploy.sh production
 
+  deploy_branch:
+      docker:
+        - image: circleci/node:8.10
+      working_directory: ~/repo
+      steps:
+        - checkout
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+        - run: npm i
+        - save_cache:
+            paths:
+              - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
+        - run: npm test -- --forbid-only
+        - run: npm run build
+        - run: npm i serverless@1.30.3
+        - run:
+            name: Deploy to test
+            command: ".circleci/deploy.sh ${CIRCLE_BRANCH} $(date -d 'tomorrow' -I)"
+
+
+
 workflows:
   version: 2
   build_and_test:
@@ -70,6 +94,13 @@ workflows:
       - package:
          requires:
             - build
+         filters:
+           branches:
+             ignore: master
+      - deploy_branch:
+         requires:
+            - build
+         context: "aws.amazon.com/alexjpaz/circleci"
          filters:
            branches:
              ignore: master

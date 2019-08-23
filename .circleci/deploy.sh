@@ -1,6 +1,11 @@
 #!/bin/bash
 
 STAGE=$1
+STAGE=${STAGE//\//-}
+
+echo "STAGE=${STAGE}"
+
+export expiresAt=$2
 
 sls() {
     node_modules/.bin/serverless $@
