@@ -1,6 +1,10 @@
 #!/bin/bash
 
 STAGE=$1
+STAGE=${STAGE//\//_}
+
+echo "STAGE=${STAGE}"
+
 export expiresAt=$2
 
 sls() {

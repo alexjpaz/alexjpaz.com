@@ -82,7 +82,7 @@ jobs:
         - run: npm i serverless@1.30.3
         - run:
             name: Deploy to test
-            command: ".circleci/deploy.sh test $(date -d 'tomorrow' -I)"
+            command: ".circleci/deploy.sh ${CIRCLE_BRANCH} $(date -d 'tomorrow' -I)"
 
 
 
