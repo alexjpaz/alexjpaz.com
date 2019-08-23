@@ -19,7 +19,7 @@ sls deploy list --stage ${STAGE} -v &> deploy-list.out
 PREVIOUS_VERSION=$(cat deploy-list.out | grep 'Timestamp' | awk '{ print $3 }' | sort -nr)
 sls deploy --stage ${STAGE} -v | tee deploy.out
 
-BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }')
+export BASE_URL=$(cat deploy.out | grep 'ServiceEndpoint' | awk '{ print $2 }')
 
 if [[ -z "$BASE_URL" ]]; then
     echo "=== Count not find ServiceEndpoint. Perhaps the stack failed to deploy? ==="
