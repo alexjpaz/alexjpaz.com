@@ -5,7 +5,7 @@ STAGE=${STAGE//\//-}
 
 echo "STAGE=${STAGE}"
 
-export expiresAt=$2
+export expiresAt=${2:-"null"}
 
 sls() {
     node_modules/.bin/serverless $@
