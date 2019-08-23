@@ -15,7 +15,7 @@ module.exports = (app) => {
   app.get('/test_html5', (req, res) => {
     const html = generateHtml5Page({
       title: "TEST_HTML5_TITLE",
-      scriptUrl: "/dist/test.js"
+      scriptUrl: "./dist/test.js"
     });
 
     res.send(html);
