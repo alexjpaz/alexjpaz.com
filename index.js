@@ -8,4 +8,8 @@ const plugin = require('./src');
 
 plugin(app, {});
 
-exports.handler = serverless(app);
+exports.handler = serverless(app, {
+  binary: [
+    'image/*'
+  ]
+});

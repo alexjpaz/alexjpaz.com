@@ -8,6 +8,12 @@ provider:
   stage: dev
   region: us-east-1
 
+  # @see https://github.com/dougmoscrop/serverless-http/issues/88
+  # @see https://github.com/serverless/serverless/pull/6063
+  apiGateway:
+    binaryMediaTypes:
+      - 'image/*'
+
 package:
   excludeDevDependencies: true
   exclude:
