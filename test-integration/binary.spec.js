@@ -22,6 +22,10 @@ describe('binary', () => {
       expect(rsp.body.length).not.to.eql(0);
     });
 
+    it('should not be a base64 data', () => {
+      expect(rsp.body.toString().endsWith("==")).to.eql(false);
+    });
+
     it('should have the same hash', () => {
       const hash = crypto.createHash('sha1')
         .update(rsp.body)
