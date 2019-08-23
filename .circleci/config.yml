@@ -19,7 +19,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm test
+      - run: npm test -- --forbid-only
 
   package:
       docker:
@@ -32,7 +32,7 @@ jobs:
         - run: npm i serverless@1.30.3
         - run:
             name: Run local integration tests
-            command: npm run test:integration
+            command: npm run test:integration -- --forbid-only
         - run:
             name: Serverless Package
             command: "SLS_DEBUG=* node_modules/.bin/serverless package -v"
@@ -52,7 +52,7 @@ jobs:
             paths:
               - node_modules
             key: v1-dependencies-{{ checksum "package.json" }}
-        - run: npm test
+        - run: npm test -- --forbid-only
         - run: npm run build
         - run: npm i serverless@1.30.3
         - run:

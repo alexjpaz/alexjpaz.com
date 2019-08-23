@@ -5,7 +5,7 @@ const { request } = setup();
 
 const crypto = require('crypto');
 
-describe.only('cache', () => {
+describe('cache', () => {
   describe('index.html', () => {
     let rsp;
 
