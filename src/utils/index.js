@@ -143,6 +143,7 @@ exports.generateHtml5Page = (props) => {
             var displayError = function () {
               var div = document.createElement('div');
               div.innerHTML = "There was an error loading the app";
+              div.className='error';
               document.body.appendChild(div);
             };
 

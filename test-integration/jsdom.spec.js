@@ -58,36 +58,43 @@ describe('jsdom', () => {
     expect(dom.window.TEST_EXTERNAL_SCRIPT, "should load an external script (webpack should be run)").to.be.ok;
   });
 
-  it.skip('should load test html5', async () => {
-    const dom = await JSDOM.fromURL(`${baseURL}/test/html5`, {
-      runScripts: "dangerously",
-      resources: "usable"
+  describe.only('html5', () => {
+    it('should load test html5', async () => {
+      const dom = await JSDOM.fromURL(`${baseURL}/test_html5`, {
+        runScripts: "dangerously",
+        resources: "usable"
+      });
+
+      expect(dom.serialize()).to.contain("/dist/test.js");
+
+      expect(dom.serialize()).to.contain("TEST_HTML5_TITLE");
+
+      await new Promise((res) => {
+        dom.window.addEventListener("load", res);
+      });
+
+      expect(dom.window.TEST_EXTERNAL_SCRIPT, "should load an external script (webpack should be run)").to.be.ok;
+
+      const nodes = dom.window.document.querySelectorAll('.error');
+      expect(nodes).to.have.lengthOf(0);
     });
 
-    expect(dom.serialize()).to.contain("/dist/test.js");
+    it('should display and error for html5', async () => {
+      const virtualConsole = new jsdom.VirtualConsole();
+      const dom = await JSDOM.fromURL(`${baseURL}/test_html5_bad`, {
+        runScripts: "dangerously",
+        resources: "usable",
+        virtualConsole
+      });
 
-    expect(dom.serialize()).to.contain("TEST_HTML5_TITLE");
+      expect(dom.serialize()).to.contain("TEST_HTML5_TITLE");
 
-    await new Promise((res) => {
-      dom.window.addEventListener("load", res);
+      await new Promise((res) => {
+        dom.window.addEventListener("load", res);
+      });
+
+      const nodes = dom.window.document.querySelectorAll('.error');
+      expect(nodes).to.have.lengthOf(1);
     });
-
-    expect(dom.window.TEST_EXTERNAL_SCRIPT, "should load an external script (webpack should be run)").to.be.ok;
-
-  });
-
-  it('should display and error for html5', async () => {
-    const dom = await JSDOM.fromURL(`${baseURL}/test/html5`, {
-      runScripts: "dangerously",
-      resources: "usable"
-    });
-
-    expect(dom.serialize()).to.contain("TEST_HTML5_TITLE");
-
-    await new Promise((res) => {
-      dom.window.addEventListener("load", res);
-    });
-
-    expect(dom.serialize()).to.contain("There was an error loading the app");
   });
 });
