@@ -58,7 +58,7 @@ describe('jsdom', () => {
     expect(dom.window.TEST_EXTERNAL_SCRIPT, "should load an external script (webpack should be run)").to.be.ok;
   });
 
-  it('should load test html5', async () => {
+  it.skip('should load test html5', async () => {
     const dom = await JSDOM.fromURL(`${baseURL}/test/html5`, {
       runScripts: "dangerously",
       resources: "usable"
