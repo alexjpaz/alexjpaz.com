@@ -5,8 +5,8 @@ const { request } = setup();
 
 const crypto = require('crypto');
 
-describe('cache', () => {
-  describe('index.html', () => {
+describe('binary', () => {
+  describe('example.png', () => {
     let rsp;
 
     before(async () => {
