@@ -224,9 +224,13 @@
 
     var clickOverlay = document.querySelector('.play-overlay');
 
-    clickOverlay.addEventListener('click', function() {
-      soundboard.andHisNameIs(NAME);
-    }, false);
+    var clickOverlayEvents = ['click','touchstart','mouseover'];
+
+    clickOverlayEvents.forEach(function(ename) {
+      clickOverlay.addEventListener(ename, function() {
+        soundboard.andHisNameIs(NAME);
+      }, false);
+    });
 
     var start = function() {
       try {
