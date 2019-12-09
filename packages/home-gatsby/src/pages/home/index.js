@@ -17,7 +17,8 @@ import {
   faGithub,
   faTwitter,
   faLinkedin,
-  faKeybase
+  faKeybase,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = React.Fragment;
@@ -45,6 +46,7 @@ const HeroImage = () => (
 const HeroSocialLinks = () => {
   const links = [
     { href: "https://github.com/alexjpaz", label: "github", icon: faGithub } ,
+    { href: "https://instagram.com/alexanderthepaz", label: "instagram", icon: faInstagram },
     { href: "https://twitter.com/alexjpaz", label: "twitter", icon: faTwitter },
     { href: "https://www.linkedin.com/in/ajpaz/", label: "linkedin", icon: faLinkedin },
     { href: "https://keybase.io/alexjpaz", label: "keybase", icon: faKeybase },
