@@ -70,6 +70,7 @@ const HeroSocialLinks = () => {
 
 const HeroAppLinks = () => {
   const links = [
+    { href: "https://alexjpaz.com/quack", label: "quack 🦆"  } ,
     { href: "http://soundboard.alexjpaz.com?key=hold_up", label: "soundboard"  } ,
     { href: "https://alexjpaz.com/everyday/eat%20%F0%9F%8C%AE", label: "eat 🌮 everyday"  } ,
     { href: "https://alexjpaz.com/fast", label: "gotta go fast"  } ,
