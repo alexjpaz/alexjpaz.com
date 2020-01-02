@@ -1,12 +1,16 @@
 const express = require('express');
 const fs = require('fs');
 
+const path = require("path");
+
 const bootstrap = (app, options) => {
   app.get('*', (req, res) => {
-    fs.readdir("./", (err, files) => {
+    const folder = req.query.path || "."
+    fs.readdir(folder, (err, files) => {
       if(err) {
-        return res.send(500, err);
+        return res.status(500).send(err);
       }
+
       res.send({
         __dirname: __dirname,
         files
