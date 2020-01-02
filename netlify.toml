@@ -1,4 +1,4 @@
 [build]
     publish = "dist/"
-    functions = "."
+    functions = "src"
     command = "npm run postinstall && npm test -- --forbid-only  && npm run build"
