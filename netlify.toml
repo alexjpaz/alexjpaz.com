@@ -2,3 +2,8 @@
     publish = "dist/"
     functions = "functions"
     command = "npm run postinstall && npm test -- --forbid-only  && npm run build"
+
+[[redirects]]
+    from = "/and-his-name-is/*"
+    to = "https://peaceful-newton-9806a4.netlify.com/:splat"
+    status = 200
