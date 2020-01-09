@@ -1,0 +1,2 @@
+/and-his-name-is https://peaceful-newton-9806a4.netlify.com/ 200
+/and-his-name-is/* https://peaceful-newton-9806a4.netlify.com/:splat 200
