@@ -7,3 +7,8 @@
     from = "/and-his-name-is/*"
     to = "https://peaceful-newton-9806a4.netlify.com/:splat"
     status = 200
+
+[[redirects]]
+    from = "/everyday/*"
+    to = "https://priceless-lamarr-a3a69f.netlify.com/:splat"
+    status = 200
