@@ -6,10 +6,11 @@
   "scripts": {
     "postinstall": "cd packages/home-gatsby && npm i",
     "start": "webpack-dev-server  --hot --inline",
-    "build": "npm run build:webpack && npm run build:gatsby && npm run build:functions",
+    "build": "npm run build:webpack && npm run build:gatsby && npm run build:functions && npm run build:redirects",
     "build:gatsby": "cd packages/home-gatsby && npm run build -- --prefix-paths && cp -a public/* ../../dist/",
     "build:webpack": "webpack -p",
     "build:functions": "rsync -ar --exclude='packages/' --exclude='tests-integration/' --exclude=start.js'' --exclude='webpack.config.js' ./ functions",
+    "build:redirects": "mkdir -p ./dist && cp -a _redirects ./dist",
     "test": "npm run test:mocha",
     "test:mocha": "mocha 'src/**/*.spec.js'",
     "test:integration": "mocha -t 10000 'test-integration/**/*.spec.js'"
