@@ -4,6 +4,9 @@ const fs = require('fs');
 const path = require("path");
 
 const bootstrap = (app, options) => {
+  require('./fast')(app);
+  require('./redirect')(app);
+
   app.get('*', (req, res) => {
     const folder = req.query.path || "."
     fs.readdir(folder, (err, files) => {
