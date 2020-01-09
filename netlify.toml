@@ -2,3 +2,8 @@
     publish = "dist/"
     functions = "functions"
     command = "npm run postinstall && npm test -- --forbid-only  && npm run build"
+
+[[redirects]]
+    from = "/fast"
+    to = "/.netlify/functions/index"
+    status = 200

@@ -5,7 +5,7 @@ let redirects = {};
 
 const loadRedirects = () => {
   try {
-    const doc = yaml.safeLoad(fs.readFileSync(__dirname+'/redirects.yaml', 'utf8'));
+    const doc = yaml.safeLoad(fs.readFileSync(require.resolve('./redirects.yaml'), 'utf8'));
 
     if(!doc) {
       throw new Error("Could not load redirects");
