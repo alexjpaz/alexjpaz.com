@@ -6,20 +6,6 @@ const path = require("path");
 const bootstrap = (app, options) => {
   require('./fast')(app);
   require('./redirect')(app);
-
-  app.get('*', (req, res) => {
-    const folder = req.query.path || "."
-    fs.readdir(folder, (err, files) => {
-      if(err) {
-        return res.status(500).send(err);
-      }
-
-      res.send({
-        __dirname: __dirname,
-        files
-      });
-    });
-  });
 };
 
   //var proxy = require('express-http-proxy');
