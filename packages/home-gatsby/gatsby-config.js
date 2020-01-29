@@ -1,6 +1,6 @@
 const build = {
-  sha: process.env.CIRCLE_SHA1 || "UNKNOWN",
-  number: process.env.CIRCLE_BUILD_NUM || "UNKNOWN"
+  sha: process.env.CIRCLE_SHA1 || process.env.COMMIT_REF || "UNKNOWN",
+  number: process.env.CIRCLE_BUILD_NUM || process.env.BUILD_ID || "UNKNOWN"
 };
 
 module.exports = {
