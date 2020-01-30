@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "cd packages/home-gatsby && npm i",
     "start": "webpack-dev-server  --hot --inline",
-    "build": "npm run build:webpack && npm run build:gatsby && npm run build:functions && npm run build:redirects",
+    "build": "npm run build:webpack && npm run build:gatsby && npm run build:functions && npm run build:redirects && npm run build:public",
+    "build:public": "cp -a public/* ./dist/",
     "build:gatsby": "cd packages/home-gatsby && npm run build -- --prefix-paths && cp -a public/* ../../dist/",
     "build:webpack": "webpack -p",
     "build:functions": "rsync -ar --exclude='packages/' --exclude='tests-integration/' --exclude=start.js'' --exclude='webpack.config.js' ./ functions",
