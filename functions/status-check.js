@@ -4,15 +4,20 @@ const mocha = new Mocha();
 
 mocha.addFile(require.resolve('./status-check.test.js'));
 
-mocha.run();
+const r = mocha.run(() => {
+  console.log(r);
+});
 
 exports.handler = function(event, context, callback) {
+  let timestamp = new Date();
   const runner = mocha.run((failures) => {
-    console.log(runner);
-
     callback(null, {
+      stats: runner.stat,
       statusCode: failures ? 200 : 500,
-      body: "Hello, World"
+      body: {
+        timestamp,
+        stats: runner.stats
+      }
     });
   });
 }
