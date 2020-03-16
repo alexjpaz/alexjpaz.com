@@ -10,7 +10,7 @@
     "build:public": "cp -a public/* ./dist/ && cp -a _headers ./dist/",
     "build:gatsby": "cd packages/home-gatsby && npm run build -- --prefix-paths && cp -a public/* ../../dist/",
     "build:webpack": "webpack -p",
-    "build:functions": "rsync -ar --exclude='packages/' --exclude='tests-integration/' --exclude=start.js'' --exclude='webpack.config.js' ./ functions",
+    "build:functions": "echo 'noop'",
     "build:redirects": "mkdir -p ./dist && cp -a _redirects ./dist",
     "test": "npm run test:mocha",
     "test:mocha": "mocha 'src/**/*.spec.js'",
