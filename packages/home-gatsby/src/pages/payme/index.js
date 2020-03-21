@@ -1,6 +1,8 @@
 import React from "react"
 import SEO from "../../components/seo"
 
+import 'bulma/css/bulma.css'
+
 import {
   faBitcoin,
   faPaypal
