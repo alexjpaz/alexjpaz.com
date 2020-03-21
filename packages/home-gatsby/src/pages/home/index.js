@@ -18,7 +18,10 @@ import {
   faTwitter,
   faLinkedin,
   faKeybase,
-  faInstagram
+  faInstagram,
+
+  faBitcoin,
+  faPaypal,
 } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = React.Fragment;
@@ -56,7 +59,7 @@ const HeroSocialLinks = () => {
     <div className="buttons are-medium">
       {
         links.map((link, i) => (
-          <a key={i} className="button is-fullwidth" href={link.href}>
+          <a key={i} target='_blank' className="button is-fullwidth" href={link.href}>
             {link.icon &&
               <span className='icon is-medium'><FontAwesomeIcon icon={link.icon} /></span>
             }
@@ -70,6 +73,7 @@ const HeroSocialLinks = () => {
 
 const HeroAppLinks = () => {
   const links = [
+    { href: "https://polly.alexjpaz.com", label: "🦜polly"  } ,
     { href: "https://alexjpaz.com/quack", label: "quack 🦆"  } ,
     { href: "http://soundboard.alexjpaz.com?key=hold_up", label: "soundboard"  } ,
     { href: "https://alexjpaz.com/everyday/eat%20%F0%9F%8C%AE", label: "eat 🌮 everyday"  } ,
@@ -81,7 +85,7 @@ const HeroAppLinks = () => {
     <div className="buttons are-medium">
       {
         links.map((link, i) => (
-          <a key={i} className="button is-fullwidth" href={link.href}>
+          <a key={i} target='_blank' className="button is-fullwidth" href={link.href}>
             {link.icon &&
               <span className='icon is-medium'><FontAwesomeIcon icon={link.icon} /></span>
             }
@@ -95,6 +99,13 @@ const HeroAppLinks = () => {
 
 const BuildInformationFooter = ({ build }) => (
     <small>{build.sha} - {build.number}</small>
+);
+
+const PaymeLink = () => (
+  <a href="payme" aria-label="donate link">
+    <span className="icon"><FontAwesomeIcon icon={faBitcoin} /></span>
+    <span className="icon"><FontAwesomeIcon icon={faPaypal} /></span>
+  </a>
 );
 
 const HomeFooter = () => (
@@ -119,6 +130,9 @@ const HomeFooter = () => (
             <span>Built by </span><a href="https://twitter.com/alexjpaz">{ data.site.siteMetadata.author }</a>
             <span> using </span>
             <a href='https://www.gatsbyjs.org/'>Gatsby</a>
+          </p>
+          <p>
+            <small><PaymeLink /></small>
           </p>
           <p>
             <small><a href='https://github.com/alexjpaz/alexjpaz.com'><BuildInformationFooter build={data.site.siteMetadata.build} /></a></small>
