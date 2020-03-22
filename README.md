@@ -2,7 +2,7 @@
 
 > My personal website with some extra goodies.
 
-[![CircleCI](https://circleci.com/gh/alexjpaz/alexjpaz.com.svg?style=svg)](https://circleci.com/gh/alexjpaz/alexjpaz.com)
+[![Build Status](https://travis-ci.org/alexjpaz/alexjpaz.com.svg?branch=master)](https://travis-ci.org/alexjpaz/alexjpaz.com)
 
 ## Quickstart
 
