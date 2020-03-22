@@ -73,12 +73,11 @@ const HeroSocialLinks = () => {
 
 const HeroAppLinks = () => {
   const links = [
-    { href: "https://polly.alexjpaz.com", label: "🦜polly"  } ,
+    { href: "https://polly.alexjpaz.com", label: "🦜 polly"  } ,
+    { href: "https://liftit.alexjpaz.com", label: "💪 liftit"  } ,
     { href: "https://alexjpaz.com/quack", label: "quack 🦆"  } ,
     { href: "http://soundboard.alexjpaz.com?key=hold_up", label: "soundboard"  } ,
     { href: "https://alexjpaz.com/everyday/eat%20%F0%9F%8C%AE", label: "eat 🌮 everyday"  } ,
-    { href: "https://alexjpaz.com/fast", label: "gotta go fast"  } ,
-    { href: "https://alexjpaz.com/doggo", label: "summon doggo 🐶"  } ,
   ];
 
   return (
