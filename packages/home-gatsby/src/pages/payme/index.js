@@ -13,7 +13,7 @@ const Layout = React.Fragment;
 
 export function PayLinks() {
   const Link = ({ children: label, icon, href }) => (
-    <a target='_blank' href={href} className="button is-fullwidth">
+    <a target='_blank' rel="noopener noreferrer" href={href} className="button is-fullwidth">
       { icon &&
           <span className="icon is-medium"><FontAwesomeIcon icon={icon} /></span>
       }
@@ -55,7 +55,7 @@ export function FullscreenHero() {
             Pay <a href='https://alexjpaz.com'>@alexjpaz</a>
           </h1>
           <h2 className="subtitle">
-            Pay debts or chuck a couple dollars for a beer 🍺
+            Pay debts or chuck a couple dollars for a beer <span role="img" aria-label="a beer">🍺</span>
           </h2>
           <PayLinks />
         </div>
