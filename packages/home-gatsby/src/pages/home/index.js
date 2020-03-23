@@ -9,6 +9,8 @@ import './home.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { HeroElement } from './HeroElement';
+
 //import {
   //faBell
 //} from '@fortawesome/free-solid-svg-icons'
@@ -26,26 +28,6 @@ import {
 
 const Layout = React.Fragment;
 
-const LinkedInUrl = 'https://www.linkedin.com/in/ajpaz';
-
-const HeroElement = () => (
-  <div className='text-center'>
-    <HeroImage />
-
-
-    <h1 className="title">
-    <a className='link-unstyled' href='https://alexjpaz.com/and-his-name-is/Alexander Paz'>Alexander Paz</a>
-    </h1>
-    <p>full stack <a href={LinkedInUrl}>staff software engineer</a> for <a href='https://realtor.com'>realtor.com</a> with over seven years of experience developing professional software.</p>
-  </div>
-);
-
-const HeroImage = () => (
-  <figure className="image">
-    <img alt="avatar" className="is-rounded" src="//1.gravatar.com/avatar/830145a71ea797aaff758c7432411d2a?size=500" />
-  </figure>
-);
-
 const HeroSocialLinks = () => {
   const links = [
     { href: "https://github.com/alexjpaz", label: "github", icon: faGithub } ,
@@ -59,7 +41,7 @@ const HeroSocialLinks = () => {
     <div className="buttons are-medium">
       {
         links.map((link, i) => (
-          <a key={i} target='_blank' className="button is-fullwidth" href={link.href}>
+          <a key={i} target='_blank' rel="noopener noreferrer" className="button is-fullwidth" href={link.href}>
             {link.icon &&
               <span className='icon is-medium'><FontAwesomeIcon icon={link.icon} /></span>
             }
@@ -84,7 +66,7 @@ const HeroAppLinks = () => {
     <div className="buttons are-medium">
       {
         links.map((link, i) => (
-          <a key={i} target='_blank' className="button is-fullwidth" href={link.href}>
+          <a key={i} target='_blank' rel="noopener noreferrer" className="button is-fullwidth" href={link.href}>
             {link.icon &&
               <span className='icon is-medium'><FontAwesomeIcon icon={link.icon} /></span>
             }
@@ -137,7 +119,7 @@ const HomeFooter = () => (
             <small><a href='https://github.com/alexjpaz/alexjpaz.com'><BuildInformationFooter build={data.site.siteMetadata.build} /></a></small>
           </p>
           <p><span role="img" aria-label="ending note">🤔</span></p>
-          <p>© 2019</p>
+          <p>© 2020</p>
         </div>
       </footer>
     )}/>
@@ -146,9 +128,8 @@ const HomeFooter = () => (
 const Home = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <HeroElement />
     <div className='container'>
-      <HeroElement />
-      <hr />
       <HeroSocialLinks />
       <hr />
       <HeroAppLinks />
