@@ -1,7 +1,5 @@
 import React from "react"
 
-import { StaticQuery, graphql } from "gatsby"
-
 import SEO from "../../components/seo"
 
 import 'bulma/css/bulma.css'
@@ -10,6 +8,7 @@ import './home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { HeroElement } from '../../components/Hero/HeroElement';
+import { Footer } from '../../components/Footer/';
 
 //import {
   //faBell
@@ -22,8 +21,6 @@ import {
   faKeybase,
   faInstagram,
 
-  faBitcoin,
-  faPaypal,
 } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = React.Fragment;
@@ -78,63 +75,17 @@ const HeroAppLinks = () => {
   );
 };
 
-const BuildInformationFooter = ({ build }) => (
-    <small>{build.sha} - {build.number}</small>
-);
-
-const PaymeLink = () => (
-  <a href="payme" aria-label="donate link">
-    <span className="icon"><FontAwesomeIcon icon={faBitcoin} /></span>
-    <span className="icon"><FontAwesomeIcon icon={faPaypal} /></span>
-  </a>
-);
-
-const HomeFooter = () => (
-  <StaticQuery
-    query={graphql`
-      query HomeFooter {
-        site {
-          siteMetadata {
-            author
-            build {
-              sha
-              number
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <footer className="footer">
-        <div className="content has-text-centered">
-          <p>
-            <span>Built by </span><a href="https://twitter.com/alexjpaz">{ data.site.siteMetadata.author }</a>
-            <span> using </span>
-            <a href='https://www.gatsbyjs.org/'>Gatsby</a>
-          </p>
-          <p>
-            <small><PaymeLink /></small>
-          </p>
-          <p>
-            <small><a href='https://github.com/alexjpaz/alexjpaz.com'><BuildInformationFooter build={data.site.siteMetadata.build} /></a></small>
-          </p>
-          <p><span role="img" aria-label="ending note">🤔</span></p>
-          <p>© 2020</p>
-        </div>
-      </footer>
-    )}/>
-);
 
 const Home = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HeroElement />
-    <div className='container'>
+    <div className='container is-narrow'>
       <HeroSocialLinks />
       <hr />
       <HeroAppLinks />
     </div>
-    <HomeFooter />
+    <Footer />
   </Layout>
 );
 

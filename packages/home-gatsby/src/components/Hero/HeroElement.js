@@ -8,7 +8,7 @@ const LinkedInUrl = 'https://www.linkedin.com/in/ajpaz';
 export const HeroElement = () => (
   <section className="hero is-medium is-dark is-bold">
     <div className="hero-body">
-      <div className="container">
+      <div className="container is-narrow">
         <HeroImage />
         <h1 className="title">
           <a className='has-text-white' href='https://alexjpaz.com/and-his-name-is/Alexander Paz'>Alexander Paz</a>
