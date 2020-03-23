@@ -9,7 +9,7 @@ import './home.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { HeroElement } from './HeroElement';
+import { HeroElement } from '../../components/Hero/HeroElement';
 
 //import {
   //faBell
