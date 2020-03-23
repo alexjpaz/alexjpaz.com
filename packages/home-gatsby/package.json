@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "prettier": "^1.17.0"
   },
   "keywords": [
