@@ -14,6 +14,36 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+const createProjectPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(filter: {frontmatter: {category: {eq: "projects"}}}) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/project.js`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
+    })
+  })
+};
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -42,4 +72,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  await createProjectPages({ graphql, actions });
 }

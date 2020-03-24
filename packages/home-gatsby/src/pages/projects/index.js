@@ -1,35 +1,42 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-const Layout = React.Fragement;
+import Layout from "../../components/layout-full"
+
+export const ProjectListItem = ({ node }) => {
+  return (
+    <div className="content is-medium" key={node.id}>
+      <Link to={node.fields.slug}>
+        <h3 className='title'>{node.frontmatter.title}</h3>
+      </Link>
+      <p>
+        {node.excerpt} 
+      </p>
+      <p>
+        <a href={node.frontmatter.project.url} className='button'>Demo</a>
+      </p>
+    </div>
+  );
+};
 
 export default ({ data }) => {
   return (
-    <div>
-      <h1 >
-        Projects
-      </h1>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link
-              to={node.fields.slug}
-            >
-          <h3
-        >
-            {node.frontmatter.title}{" "}
-          <span
-        >
-            — {node.frontmatter.date}
-        </span>
-      </h3>
-      <p>{node.excerpt}</p>
-    </Link>
-    </div>
-      ))}
-  </div>
-  )
-}
+    <Layout>
+      <div className="container has-text-centered">
+        <h1 className="title is-1">Projects</h1>
+        <section className='section has-text-justified'>
+          <div class="columns is-centered">
+            <div class="column is-half">
+              {data.allMarkdownRemark.edges.map(({ node }) => (
+                <ProjectListItem node={node} />
+              ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      </Layout>
+  );
+};
 
 export const query = graphql`
   query {
@@ -41,6 +48,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            project {
+              url
+            }
           }
           excerpt
           fields {
