@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
 import SEO from "../../components/seo"
 
@@ -50,31 +51,48 @@ const HeroSocialLinks = () => {
   );
 };
 
-const HeroAppLinks = () => {
-  const links = [
-    { href: "https://polly.alexjpaz.com", label: "🦜 polly"  } ,
-    { href: "https://liftit.alexjpaz.com", label: "💪 liftit"  } ,
-    { href: "https://alexjpaz.com/quack", label: "quack 🦆"  } ,
-    { href: "http://soundboard.alexjpaz.com?key=hold_up", label: "soundboard"  } ,
-    { href: "https://alexjpaz.com/everyday/eat%20%F0%9F%8C%AE", label: "eat 🌮 everyday"  } ,
-  ];
 
+const ProjectsList = () => (
+  <StaticQuery
+  query={graphql`
+      query {
+				allMarkdownRemark(filter: {frontmatter: {category: {eq: "projects"}}}) {
+					edges {
+						node {
+							id
+							frontmatter {
+								title
+							}
+							fields {
+								slug
+							}
+						}
+					}
+				}
+			}
+    `}
+  render={data =>
+		<React.Fragment>
+			{ data.allMarkdownRemark.edges.map(({ node }) => (
+					<a key={node.id} href={ node.fields.slug } className='button is-fullwidth'>
+							<span>{node.frontmatter.title}</span>
+					</a>
+				))
+			}
+		</React.Fragment>
+	}
+/>
+);
+
+
+
+const HeroAppLinks = () => {
   return (
     <div className="buttons are-medium">
-      {
-        links.map((link, i) => (
-          <a key={i} target='_blank' rel="noopener noreferrer" className="button is-fullwidth" href={link.href}>
-            {link.icon &&
-              <span className='icon is-medium'><FontAwesomeIcon icon={link.icon} /></span>
-            }
-            <span>{link.label}</span>
-          </a>
-       ))
-      }
+			<ProjectsList />
     </div>
   );
 };
-
 
 const Home = () => (
   <Layout>
