@@ -5,8 +5,13 @@ import 'bulma/css/bulma.css'
 
 import {
   faBitcoin,
-  faPaypal
+  faPaypal,
 } from '@fortawesome/free-brands-svg-icons'
+
+import {
+  faCoffee as faKofi,
+} from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Layout = React.Fragment;
@@ -28,6 +33,9 @@ export function PayLinks() {
       </Link>
       <Link href="https://paypal.me/alexjpaz" icon={faPaypal}>
         Paypal
+      </Link>
+      <Link href="https://ko-fi.com/alexjpaz" icon={faKofi}>
+        Ko-fi
       </Link>
     </div>
   )
