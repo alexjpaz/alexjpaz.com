@@ -30,6 +30,8 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-http-proxy": "^1.4.0",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
     "js-yaml": "^3.13.1",
     "serverless-http": "^1.6.0",
     "serverless-offline": "^3.25.17",
