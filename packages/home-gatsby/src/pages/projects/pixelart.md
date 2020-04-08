@@ -12,4 +12,4 @@ date: 2020-04-01
     </a>
 </figure>
 
-I'm practicing making pixel! You can check my daily posts on the [pixelart blog](https://alexjpaz.github.io/pixelart/).
+I'm practicing making pixel art! You can check my daily posts on the [pixelart blog](https://alexjpaz.github.io/pixelart/).
