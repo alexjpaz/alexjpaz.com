@@ -18,7 +18,9 @@ const BlogPost = ({ data }) => {
         <section className='section has-text-justified'>
           <div class="columns is-centered">
             <div class="column is-half">
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <div class='content is-large'>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              </div>
             </div>
           </div>
         </section>
