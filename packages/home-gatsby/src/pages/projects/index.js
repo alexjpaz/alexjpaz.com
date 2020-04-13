@@ -6,14 +6,24 @@ import Layout from "../../components/layout-full"
 export const ProjectListItem = ({ node }) => {
   return (
     <div className="content is-medium" key={node.id}>
-      <Link to={node.fields.slug}>
-        <h3 className='title'>{node.frontmatter.title}</h3>
-      </Link>
+      <div className='level'>
+        <div className='level-left'>
+          <div className='level-item'>
+            <Link to={node.fields.slug}>
+              <h3 className='title'>{node.frontmatter.title}</h3>
+            </Link>
+          </div>
+        </div>
+        <div className='level-right'>
+          <div className='level-item'>
+          </div>
+        </div>
+      </div>
+      <h6 className='subtitle'>
+        <a href={node.frontmatter.project.url}>{node.frontmatter.project.url}</a>
+      </h6>
       <p>
-        {node.excerpt} 
-      </p>
-      <p>
-        <a href={node.frontmatter.project.url} className='button'>Demo</a>
+        {node.excerpt}
       </p>
     </div>
   );
@@ -33,6 +43,7 @@ export default ({ data }) => {
               </div>
             </div>
           </section>
+          <a href='/' className='button is-fullwidth is-large is-primary'>Home</a>
         </div>
       </Layout>
   );
