@@ -76,7 +76,7 @@ const HeroAppLinks = (props) => {
 
 const Home = (props) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="@alexjpaz" keywords={[`gatsby`, `application`, `react`]} />
     <HeroElement />
     <div className='container is-narrow'>
       <HeroSocialLinks {...props} />

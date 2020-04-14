@@ -67,6 +67,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:image`,
+          content: 'https://1.gravatar.com/avatar/830145a71ea797aaff758c7432411d2a?size=500'
+        }
       ]
         .concat(
           keywords.length > 0
