@@ -25,7 +25,7 @@ const BlogPost = ({ data }) => {
           </div>
         </section>
 
-        <a href="/projects">More projects</a>
+        <a href="/blogs">More blogs</a>
       </div>
     </Layout>
   )

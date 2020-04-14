@@ -40,10 +40,10 @@ export default ({ data }) => {
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <ProjectListItem node={node} />
               ))}
+              <a href='/' className='button is-fullwidth is-large is-primary'>Home</a>
               </div>
             </div>
           </section>
-          <a href='/' className='button is-fullwidth is-large is-primary'>Home</a>
         </div>
       </Layout>
   );
