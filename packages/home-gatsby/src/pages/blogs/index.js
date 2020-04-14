@@ -33,7 +33,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div className="container has-text-centered">
-        <h1 className="title is-1">Projects</h1>
+        <h1 className="title is-1">Blogs</h1>
         <section className='section has-text-justified'>
           <div class="columns is-centered">
             <div class="column is-half">
@@ -51,7 +51,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: "projects"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: "blogs"}}}) {
       totalCount
       edges {
         node {

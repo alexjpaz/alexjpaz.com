@@ -1,6 +1,6 @@
 ---
 title: 🕹 gamedev
-category: projects
+category: blogs
 project:
   url: "https://alexjpaz.github.io/gamedev/"
 date: 2020-04-01

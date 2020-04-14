@@ -1,6 +1,6 @@
 ---
 title: 👾 pixelart
-category: projects
+category: blogs
 project:
   url: "https://alexjpaz.github.io/pixelart/"
 date: 2020-04-01
