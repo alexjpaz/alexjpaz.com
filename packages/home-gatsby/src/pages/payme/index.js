@@ -6,6 +6,7 @@ import 'bulma/css/bulma.css'
 import {
   faBitcoin,
   faPaypal,
+  faPatreon,
 } from '@fortawesome/free-brands-svg-icons'
 
 import {
@@ -34,9 +35,14 @@ export function PayLinks() {
       <Link href="https://paypal.me/alexjpaz" icon={faPaypal}>
         Paypal
       </Link>
+      <Link href="https://www.patreon.com/alexjpaz" icon={faPatreon}>
+        Patreon
+      </Link>
       <Link href="https://ko-fi.com/alexjpaz" icon={faKofi}>
         Ko-fi
       </Link>
+
+
     </div>
   )
 }
@@ -59,13 +65,17 @@ export function FullscreenHero() {
       <HeroHead />
       <div className="hero-body">
         <div className="container has-text-centered">
-          <h1 className="title">
-            Pay <a href='https://alexjpaz.com'>@alexjpaz</a>
-          </h1>
-          <h2 className="subtitle">
-            Pay debts or chuck a couple dollars for a beer <span role="img" aria-label="a beer">🍺</span>
-          </h2>
-          <PayLinks />
+          <div className="columns">
+            <div className="column is-half is-offset-one-quarter">
+              <h1 className="title">
+                Pay <a href='https://alexjpaz.com'>@alexjpaz</a>
+              </h1>
+              <h2 className="subtitle">
+                Pay debts or chuck a couple dollars for a beer <span role="img" aria-label="a beer">🍺</span>
+              </h2>
+              <PayLinks />
+            </div>
+          </div>
         </div>
       </div>
     </section>
