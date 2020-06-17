@@ -21,7 +21,7 @@ import {
   faLinkedin,
   faKeybase,
   faInstagram,
-
+  faTwitch,
 } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = React.Fragment;
@@ -32,6 +32,7 @@ const HeroSocialLinks = () => {
     { href: "https://instagram.com/alexanderthepaz", label: "instagram", icon: faInstagram },
     { href: "https://twitter.com/alexjpaz", label: "twitter", icon: faTwitter },
     { href: "https://www.linkedin.com/in/ajpaz/", label: "linkedin", icon: faLinkedin },
+    { href: "https://www.twitch.tv/alexjpaz", label: "twitch", icon: faTwitch },
     { href: "https://keybase.io/alexjpaz", label: "keybase", icon: faKeybase },
   ];
 
