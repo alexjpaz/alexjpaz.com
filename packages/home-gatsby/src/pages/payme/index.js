@@ -7,6 +7,7 @@ import {
   faBitcoin,
   faPaypal,
   faPatreon,
+  faTwitch,
 } from '@fortawesome/free-brands-svg-icons'
 
 import {
@@ -41,8 +42,9 @@ export function PayLinks() {
       <Link href="https://ko-fi.com/alexjpaz" icon={faKofi}>
         Ko-fi
       </Link>
-
-
+      <Link href="https://streamlabs.com/alexjpaz/tip" icon={faTwitch}>
+        Streamlabs
+      </Link>
     </div>
   )
 }

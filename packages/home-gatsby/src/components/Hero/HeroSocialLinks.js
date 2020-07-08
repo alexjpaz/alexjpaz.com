@@ -14,10 +14,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const HeroSocialLinks = () => {
   const links = [
     { href: "https://github.com/alexjpaz", label: "github", icon: faGithub } ,
+    { href: "https://www.twitch.tv/alexjpaz", label: "twitch", icon: faTwitch },
     { href: "https://instagram.com/alexanderthepaz", label: "instagram", icon: faInstagram },
     { href: "https://twitter.com/alexjpaz", label: "twitter", icon: faTwitter },
     { href: "https://www.linkedin.com/in/ajpaz/", label: "linkedin", icon: faLinkedin },
-    { href: "https://www.twitch.tv/alexjpaz", label: "twitch", icon: faTwitch },
     { href: "https://keybase.io/alexjpaz", label: "keybase", icon: faKeybase },
   ];
 
