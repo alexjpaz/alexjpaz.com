@@ -12,7 +12,7 @@ export const HeroLink = ({ href, children }) => (
 export class SayAlexPaz extends React.Component {
   handleClick() {
     const audio = new Audio();
-    audio.src = 'http://soundboard.alexjpaz.com/alexpaz'
+    audio.src = 'https://soundboard.alexjpaz.com/alexpaz'
     audio.play();
   }
   render () {
