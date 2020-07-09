@@ -29,7 +29,7 @@ export const CurrentWork = () => (
 export const Subtitle = () => (
   <p>
     <SayAlexPaz /> I am a full stack <HeroLink href={LinkedInUrl}>staff software engineer</HeroLink> for <CurrentWork /> with over seven years of experience developing professional software.
-    When I&apos;m not writing tests for my software I am an avid <HeroLink className='has-text-primary' href='/projects/liftit/'>powerlifter</HeroLink>, amatuer <HeroLink className='has-text-primary' href='https://instagram.com/alexanderthepaz'> photographer</HeroLink>, casual <HeroLink className='has-text-primary' href='https://www.twitch.tv/alexjpaz'>streamer</HeroLink>, and just generally love learning and being <HeroLink className='has-text-primary' href='/blogs/pixelart/'>creative</HeroLink>.
+    When I&apos;m not writing tests for my software I am an avid <HeroLink className='has-text-primary' href='/projects/liftit/'>powerlifter</HeroLink>, <HeroLink href='/spicy-meat-pics'>cooking</HeroLink> delicious meals, amatuer <HeroLink className='has-text-primary' href='https://instagram.com/alexanderthepaz'> photographer</HeroLink>, casual <HeroLink className='has-text-primary' href='https://www.twitch.tv/alexjpaz'>streamer</HeroLink>, and just generally love learning and being <HeroLink className='has-text-primary' href='/blogs/pixelart/'>creative</HeroLink>.
   </p>
 );
 
