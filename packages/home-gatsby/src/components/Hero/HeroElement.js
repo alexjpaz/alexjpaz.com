@@ -29,7 +29,7 @@ export const CurrentWork = () => (
 export const Subtitle = () => (
   <p>
     <SayAlexPaz /> I am a full stack <HeroLink href={LinkedInUrl}>staff software engineer</HeroLink> for <CurrentWork /> with over seven years of experience developing professional software.
-    When I&apos;m not writing tests for my software I am an avid <HeroLink className='has-text-primary' href='/projects/liftit/'>powerlifter</HeroLink>, cooking <HeroLink href='/spicy-meat-pics'>delicious meals</HeroLink>, amatuer <HeroLink className='has-text-primary' href='https://instagram.com/alexanderthepaz'> photographer</HeroLink>, casual <HeroLink className='has-text-primary' href='https://www.twitch.tv/alexjpaz'>streamer</HeroLink>, and just generally love learning and being <HeroLink className='has-text-primary' href='/blogs/pixelart/'>creative</HeroLink>.
+    When I&apos;m not writing tests for my software I am an avid <HeroLink className='has-text-primary' href='/projects/liftit/'>powerlifter</HeroLink>, cooking <HeroLink href='/spicy-meat-pics'>delicious meals</HeroLink>, amatuer <HeroLink className='has-text-primary' href='https://instagram.com/alexanderthepaz'> photographer</HeroLink>, occasional <HeroLink href='https://app.roll20.net/users/2322149/alexander-p'>dungeon master</HeroLink>, casual <HeroLink className='has-text-primary' href='https://www.twitch.tv/alexjpaz'>streamer</HeroLink>, dabbling in <HeroLink href='https://soundcloud.com/alexanderthepaz'>music compilation</HeroLink>, and just generally love learning and being <HeroLink className='has-text-primary' href='/blogs/pixelart/'>creative</HeroLink>.
   </p>
 );
 
