@@ -14,3 +14,7 @@
 /twitch/games https://airtable.com/shrYMlLBO8Byk8WU7/tblIEzdRZDE0O6VoL 302
 /twitch/suggest https://airtable.com/shrGEE2S4Nz3kOoPy 302
 /twitch/next https://airtable.com/shrL0lcO5D4GrlJIB 302
+
+/twitch/sfx https://dhttm9zkbfvzw.cloudfront.net/alexjpaz-twitch/alerts/playground.html 302
+
+/t/s /twitch/sfx 302
