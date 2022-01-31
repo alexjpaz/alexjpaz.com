@@ -7,12 +7,14 @@ import {
   faKeybase,
   faInstagram,
   faTwitch,
+  faLink,
 } from '@fortawesome/free-brands-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const HeroSocialLinks = () => {
   const links = [
+    { href: "https://linktr.ee/alexjpaz", label: "Linktree", icon: faLink } ,
     { href: "https://github.com/alexjpaz", label: "github", icon: faGithub } ,
     { href: "https://www.twitch.tv/alexjpaz", label: "twitch", icon: faTwitch },
     { href: "https://instagram.com/alexanderthepaz", label: "instagram", icon: faInstagram },
