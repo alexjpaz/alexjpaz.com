@@ -1,0 +1,26 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'alexjpaz.com'
+
+theme = "lynx"
+
+enableEmoji = true
+disableKinds = ["taxonomy", "term"]
+
+[params.author]
+  name = "alexjpaz"
+  headline = "Most people just call me Paz."
+  image = "https://1.gravatar.com/avatar/830145a71ea797aaff758c7432411d2a?size=500"
+  links = [
+    { github = "https://github.com/alexjpaz" },
+    { link = { href = "https://www.twitch.tv/alexjpaz", text = "Twitch", icon = "twitch" } },
+    { linkedin = "https://www.linkedin.com/in/ajpaz/" },
+    { keybase = "https://keybase.io/alexjpaz" }
+  ]
+
+[markup.highlight]
+  noClasses = false
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true
