@@ -3,3 +3,6 @@ node_modules/
 .serverless/
 dist/
 functions/
+
+# Local Netlify folder
+.netlify
