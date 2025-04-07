@@ -2,6 +2,11 @@
   publish = "public"
   command = "hugo"
 
+
+[context.production.environment]
+  HUGO_VERSION = "0.114.0"  # Or your actual version (you can check with `hugo version`)
+
+
 [[redirects]]
     from = "/and-his-name-is/*"
     to = "https://peaceful-newton-9806a4.netlify.com/:splat"
