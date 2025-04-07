@@ -1,5 +1,6 @@
 [build]
-    publish = "."
+  publish = "public"
+  command = "hugo"
 
 [[redirects]]
     from = "/and-his-name-is/*"
