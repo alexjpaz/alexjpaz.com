@@ -1,5 +1,9 @@
+public/
 node_modules/
 *.log
 .serverless/
 dist/
 functions/
+
+# Local Netlify folder
+.netlify
