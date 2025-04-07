@@ -9,7 +9,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params.author]
   name = "alexjpaz"
-  headline = "Most people just call me Paz."
+  headline = "Most people just call me Paz"
   image = "https://1.gravatar.com/avatar/830145a71ea797aaff758c7432411d2a?size=500"
   links = [
     { github = "https://github.com/alexjpaz" },
