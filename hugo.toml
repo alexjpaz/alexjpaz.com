@@ -14,12 +14,12 @@ disableKinds = ["taxonomy", "term"]
   links = [
     { github = "https://github.com/alexjpaz" },
     { link = { href = "https://www.twitch.tv/alexjpaz", text = "Twitch", icon = "twitch" } },
+    { instagram = "https://instagram.com/alexanderthepaz" },
     { linkedin = "https://www.linkedin.com/in/ajpaz/" },
     { keybase = "https://keybase.io/alexjpaz" },
     { link = { href = "https://linktr.ee/alexjpaz", text = "linktr.ee", icon = "link" } },
     { link = { href = "https://alexjpaz.github.io/pixelart/", text = "pixel art", icon = "link" } },
     { link = { href = "https://alexjpaz.github.io/gamedev/", text = "game dev", icon = "link" } },
-    
   ]
 
 [markup.highlight]
