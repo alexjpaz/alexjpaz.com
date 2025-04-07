@@ -2,17 +2,115 @@
   publish = "public"
   command = "hugo"
 
-
 [context.production.environment]
   HUGO_VERSION = "0.114.0"  # Or your actual version (you can check with `hugo version`)
 
+[[redirects]]
+  from = "/and-his-name-is/*"
+  to = "https://peaceful-newton-9806a4.netlify.com/:splat"
+  status = 200
 
 [[redirects]]
-    from = "/and-his-name-is/*"
-    to = "https://peaceful-newton-9806a4.netlify.com/:splat"
-    status = 200
+  from = "/everyday/*"
+  to = "https://priceless-lamarr-a3a69f.netlify.com/:splat"
+  status = 200
 
 [[redirects]]
-    from = "/everyday/*"
-    to = "https://priceless-lamarr-a3a69f.netlify.com/:splat"
-    status = 200
+  from = "/nani"
+  to = "https://www.youtube.com/embed/vxKBHX9Datw?start=6&autoplay=1"
+  status = 302
+
+[[redirects]]
+  from = "/wishlist"
+  to = "https://www.amazon.com/gp/registry/wishlist/39HDNC1ODLVA4"
+  status = 302
+
+[[redirects]]
+  from = "/prathu"
+  to = "http://prathu.herokuapp.com"
+  status = 302
+
+[[redirects]]
+  from = "/be-my-friend"
+  to = "https://www.youtube.com/watch?v=1Uy8D_KsdyA"
+  status = 302
+
+[[redirects]]
+  from = "/teamwork"
+  to = "https://cdn.rawgit.com/alexjpaz/tilde-soundboard/files/tenascious_d_nsfw_thats_fucking_teamwork.ogg"
+  status = 302
+
+[[redirects]]
+  from = "/benefits"
+  to = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  status = 302
+
+[[redirects]]
+  from = "/quack"
+  to = "https://alexjpaz-playground.github.io/quack"
+  status = 302
+
+[[redirects]]
+  from = "/all-i-want-for-christmas-is"
+  to = "https://alexjpaz-playground.github.io/all-i-want-for-christmas-is"
+  status = 302
+
+[[redirects]]
+  from = "/polly"
+  to = "https://alexjpaz.github.io/polly"
+  status = 302
+
+[[redirects]]
+  from = "/peanut-butter-drunk"
+  to = "https://lh6.googleusercontent.com/-lvNY9PUdesE/UjnhShYyfeI/AAAAAAAAJIU/WCTE16JJmqU/s512/9-12-2013%2B22-59-37_001.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/spicy-meat-pics"
+  to = "https://photos.app.goo.gl/ZHh2WGNw3c8UPo9o9"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/completed-games"
+  to = "https://airtable.com/shrNOKWSlukeB9JAb/tblIEzdRZDE0O6VoL"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/kanban"
+  to = "https://airtable.com/shr1M6LM4Q54gfWVg/tblIEzdRZDE0O6VoL"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/games"
+  to = "https://airtable.com/shrYMlLBO8Byk8WU7/tblIEzdRZDE0O6VoL"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/suggest"
+  to = "https://airtable.com/shrGEE2S4Nz3kOoPy"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/next"
+  to = "https://airtable.com/shrmb7QMvLqGqKN2J/tblIEzdRZDE0O6VoL"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/sfx"
+  to = "https://dhttm9zkbfvzw.cloudfront.net/alexjpaz-twitch/alerts/playground.html"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/vote"
+  to = "https://alexjpaz-twitch-game-wheel.netlify.app/.netlify/functions/redirect-to-next-campaign-poll"
+  status = 302
+
+[[redirects]]
+  from = "/t/s"
+  to = "/twitch/sfx"
+  status = 302
+
+[[redirects]]
+  from = "/twitch/ra"
+  to = "https://retroachievements.org/user/alexjpaz"
+  status = 302
