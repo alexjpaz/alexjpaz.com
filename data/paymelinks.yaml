@@ -1,0 +1,9 @@
+- label: Bitcoin
+  href: https://blockchain.info/address/15LFWbptDobBVmgNw9ABDFBtnYg7KMh5WN
+  icon: fab fa-bitcoin
+  type: bitcoin
+
+- label: Ko-fi
+  href: https://ko-fi.com/alexjpaz
+  icon: fas fa-coffee
+  type: kofi

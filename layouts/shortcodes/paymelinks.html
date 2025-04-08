@@ -1,0 +1,19 @@
+<div class="mt-4 flex min-w-full flex-col flex-wrap sm:min-w-0">
+    {{ range site.Data.paymelinks }}
+      <a
+        class="link link-{{ .type }} mb-3 min-w-full rounded py-2 text-lg sm:px-24"
+        href="{{ .href }}"
+        target="_blank"
+        title="{{ .label }}"
+        rel="me noopener noreferrer"
+      >
+        <span class="mr-1">
+          <span class="icon relative inline-block align-text-bottom">
+            <i class="{{ .icon }}"></i>
+          </span>
+        </span>
+        {{ .label }}
+      </a>
+    {{ end }}
+  </div>
+  
