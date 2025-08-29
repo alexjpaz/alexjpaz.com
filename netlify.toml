@@ -114,3 +114,8 @@
   from = "/twitch/ra"
   to = "https://retroachievements.org/user/alexjpaz"
   status = 302
+
+[[redirects]]
+  from = "/vgcc"
+  to = "https://vgcc-hub.github.io/"
+  status = 302
